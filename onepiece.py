@@ -4,6 +4,7 @@ import re
 import os
 import smtplib
 from email.mime.text import MIMEText
+import time
 
 url = 'http://www.ygdy8.com/html/dongman/new/20150111/47124.html'
 
@@ -51,6 +52,8 @@ with open('onepiece.txt','r',encoding='utf-8') as dl:
                 download.append(link.get_text())
             else:
                 print('error {} occurred.'.format(r))
+            #when multiple episodes exists, sometimes ThunderStart hangs or not able to handle new download request
+            time.sleep(5)    
         else:
             #print('{} has already been downloaded, ignore.'.format(link.get_text()))
             continue
