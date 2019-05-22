@@ -40,6 +40,7 @@ with open('onepiece.txt','w',encoding='utf-8') as dl:
 download = []
 with open('onepiece.txt','r',encoding='utf-8') as dl:
     dlst = dl.read()
+    links.reverse()
     for link in links:
         
         if link.get_text() not in dlst:
@@ -56,7 +57,7 @@ with open('onepiece.txt','r',encoding='utf-8') as dl:
             time.sleep(5)    
         else:
             #print('{} has already been downloaded, ignore.'.format(link.get_text()))
-            continue
+            break
 
 if len(download) > 0:
     body = ''
