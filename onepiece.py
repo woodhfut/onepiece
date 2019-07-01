@@ -61,6 +61,7 @@ with open('onepiece.txt','r',encoding='utf-8') as dl:
 
 if len(download) > 0:
     body = ''
+    download.reverse()
     with open('onepiece.txt','a', encoding='utf-8') as dl:
         for itm in download:
             dl.write(itm+'\r\n')
