@@ -6,11 +6,11 @@ import smtplib
 from email.mime.text import MIMEText
 import time
 
-url = 'http://www.ygdy8.com/html/dongman/new/20150111/47124.html'
+url = 'https://www.ygdy8.com/html/dongman/new/20150111/47124.html'
 
 mail_addr = 'woodhfut@hotmail.com'
-pswd ='<pswd>'
-thunder_path = r'D:\Program Files (x86)\Thunder Network\Thunder\Program\ThunderStart.exe'
+pswd ='mohan@123'
+thunder_path = r'C:\Program Files (x86)\Thunder Network\Thunder\Program\ThunderStart.exe'
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
@@ -31,12 +31,15 @@ links = bs.find_all('a',text=re.compile(r'ftp:.+海贼王.+\.[mp4|rmvb]'))
 if not links:
     print('failed to get download page links, exit.')
     exit()
-'''
-with open('onepiece.txt','w',encoding='utf-8') as dl:
-    for link in links:
-        print(link.get_text())
-        dl.write(link.get_text()+'\r\n')
-'''
+
+print(links[-1])
+
+
+# with open('onepiece.txt','w',encoding='utf-8') as dl:
+#     for link in links:
+#         print(link.get_text())
+#         dl.write(link.get_text()+'\r\n')
+
 download = []
 with open('onepiece.txt','r',encoding='utf-8') as dl:
     dlst = dl.read()
@@ -63,6 +66,8 @@ if len(download) > 0:
     body = ''
     download.reverse()
     with open('onepiece.txt','a', encoding='utf-8') as dl:
+        if(len(download)>1):
+            download.reverse()
         for itm in download:
             dl.write(itm+'\r\n')
             body += itm + '\n'
