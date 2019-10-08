@@ -6,7 +6,7 @@ import smtplib
 from email.mime.text import MIMEText
 import time
 
-url = 'https://www.ygdy8.com/html/dongman/new/20150111/47124.html'
+url = 'https://dytt8.net/html/dongman/new/20150111/47110.html'
 
 mail_addr = 'woodhfut@hotmail.com'
 pswd ='mohan@123'
@@ -64,7 +64,6 @@ with open('onepiece.txt','r',encoding='utf-8') as dl:
 
 if len(download) > 0:
     body = ''
-    download.reverse()
     with open('onepiece.txt','a', encoding='utf-8') as dl:
         if(len(download)>1):
             download.reverse()
