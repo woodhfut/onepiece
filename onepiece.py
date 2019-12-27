@@ -9,7 +9,9 @@ import time
 url = 'https://dytt8.net/html/dongman/new/20150111/47110.html'
 
 mail_addr = 'woodhfut@hotmail.com'
-pswd ='mohan@123'
+pswd = os.environ['MAIL_PASSWORD']
+
+#TODO: using winreg to get the thunder path? 
 thunder_path = r'C:\Program Files (x86)\Thunder Network\Thunder\Program\ThunderStart.exe'
 
 headers = {
