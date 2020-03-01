@@ -73,7 +73,7 @@ if len(download) > 0:
             dl.write(itm+'\r\n')
             body += itm + '\n'
     
-    #send email to notify me.
+    #send email to notify me. 
     
     conn = smtplib.SMTP('smtp.live.com',587)
     conn.ehlo()
